@@ -9,6 +9,8 @@ Reference : Atsushi Kakogawa(2016), Design of a Multilink-articulated Wheeled In
 ![image](https://user-images.githubusercontent.com/86711384/185090482-feae1dd0-aaf1-4dd9-bba4-3ca795b865d5.png)
 
 ## Controller : motor_haptic_1
+![image](https://user-images.githubusercontent.com/86711384/185094723-173a92b6-c9d8-4331-bbb4-4b33bd3f4b2e.png)
+   
 With Arduino Uno & Dynamixel XH430V350R (https://www.robotis.com/shop/item.php?it_id=902-0129-000)
 we made a controller that can control front two links intuitively & minutely.   
    
