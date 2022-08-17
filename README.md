@@ -11,4 +11,4 @@ Reference : Atsushi Kakogawa(2016), Design of a Multilink-articulated Wheeled In
 ## Controller
 With Arduino Uno & Dynamixel XH430V350R (https://www.robotis.com/shop/item.php?it_id=902-0129-000)
 we made a controller that can control front two links intuitively & minutely.   
-We added haptic function which share senses with the robot
+We added haptic function which shares senses with the robot
