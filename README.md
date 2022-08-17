@@ -15,4 +15,4 @@ we made a controller that can control front two links intuitively & minutely.
 We added haptic function which helps the controller to share senses with the robot.   
    
 There were some limits imitating haptic function with arduino. 
-But we implemented haptic functionality by only sharing controller's sense. 
+But we implemented haptic functionality by only sharing controller's sense to the robot. 
