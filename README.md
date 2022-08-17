@@ -1,1 +1,1 @@
-# Haptic_Device
+# Haptic_Device_Arduino
