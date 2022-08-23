@@ -23,6 +23,11 @@ But we implemented haptic functionality by only sharing controller's sense to th
 With using motor_haptic_1 code, we linked controller and robot.   
 We got the medium angle of the controller by forward kinematics.   
 We substituted the angles of controller to the motor in the robot, and achieved same movement with each other.   
+   
+In the code,   
+a,b : Each length of controller links   
+theta2, theta5 : Upper & Lower motor's position of the controller   
+theta3 : Angle between two links of controller's upper part   
 
 ## Other files
 They are for checking & updating dynamixel's id and baudrate.   
