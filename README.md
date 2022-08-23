@@ -19,6 +19,11 @@ We added haptic function which helps the controller to share senses with the rob
 There were some limits imitating haptic function with arduino. 
 But we implemented haptic functionality by only sharing controller's sense to the robot. 
    
+## link_robcon
+With using motor_haptic_1 code, we linked controller and robot.   
+We got the medium angle of the controller by forward kinematics.   
+We substituted the angles of controller to the motor in the robot, and achieved same movement with each other.   
+
 ## Other files
 They are for checking & updating dynamixel's id and baudrate.   
 "debug" is for debugging the current velocity, position, etc of the dynamixel.   
