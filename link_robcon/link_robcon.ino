@@ -20,7 +20,9 @@ DynamixelShield dxl;
 const uint8_t ID_1 = 1; //CONTROLLER JOINT1
 const uint8_t ID_2 = 2; //ROBOT JOINT1
 const uint8_t ID_3 = 3; //ROBOT JOINT2
-const uint8_t ID_0 = 4; //CONTROLLER JOINT2
+const uint8_t ID_4 = 4; //CONTROLLER JOINT2
+const uint8_t ID_5 = 5; //CONTROLLER ROTATION
+const uint8_t ID_6 = 6; //ROBOT ROTATION
 const int32_t BAUDRATE = 57600;
 
 float a=68.73, b=46.82;
@@ -39,12 +41,16 @@ void setup() {
   dxl.ping(ID_1);
   dxl.ping(ID_2);
   dxl.ping(ID_3);
-  dxl.ping(ID_0);
-
+  dxl.ping(ID_4);
+  dxl.ping(ID_5);
+  dxl.ping(ID_6);
+  
   dxl.setOperatingMode(ID_1, OP_CURRENT_BASED_POSITION);
   dxl.setOperatingMode(ID_2, OP_CURRENT_BASED_POSITION);
   dxl.setOperatingMode(ID_3, OP_CURRENT_BASED_POSITION);
-  dxl.setOperatingMode(ID_0, OP_CURRENT_BASED_POSITION);
+  dxl.setOperatingMode(ID_4, OP_CURRENT_BASED_POSITION);
+  dxl.setOperatingMode(ID_5, OP_CURRENT_BASED_POSITION);
+  dxl.setOperatingMode(ID_6, OP_CURRENT_BASED_POSITION);
 
   dxl.torqueOn(ID_2);
   dxl.torqueOn(ID_3);
@@ -60,33 +66,35 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   vel_1 = dxl.getPresentVelocity(ID_1);
-  vel_0 = dxl.getPresentVelocity(ID_0);
+  vel_0 = dxl.getPresentVelocity(ID_4);
   
   get_angle();
   dxl.setGoalPosition(ID_2, theta2, UNIT_DEGREE);
   dxl.setGoalPosition(ID_3, theta3, UNIT_DEGREE);
 
-  if ((dxl.getPresentVelocity(ID_2) == 0 || dxl.getPresentVelocity(ID_3) == 0) && (vel_1 * dxl.getPresentVelocity(ID_1) > 0 || vel_0 * dxl.getPresentVelocity(ID_0))){
+  if ((dxl.getPresentVelocity(ID_2) == 0 || dxl.getPresentVelocity(ID_3) == 0) && (vel_1 * dxl.getPresentVelocity(ID_1) > 0 || vel_0 * dxl.getPresentVelocity(ID_4))){
     while(1){
       dxl.torqueOn(ID_1);
-      dxl.torqueOn(ID_0);
+      dxl.torqueOn(ID_4);
       dxl.setGoalPosition(ID_1, dxl.getPresentPosition(ID_2));
 
       vel1_1 = dxl.getPresentVelocity(ID_1);
-      vel0_1 = dxl.getPresentVelocity(ID_0);
+      vel0_1 = dxl.getPresentVelocity(ID_4);
       
       if (vel1_1 == 0 && vel0_1 == 0){
         dxl.torqueOff(ID_1);
-        dxl.torqueOff(ID_0);
+        dxl.torqueOff(ID_4);
       }
 
       if (-vel_1 * vel1_1 || -vel_0 * vel0_1){
         dxl.torqueOff(ID_1);
-        dxl.torqueOff(ID_0);
+        dxl.torqueOff(ID_4);
         break;
       }
     }
   }
+
+  if (dxl.getPresentVelocity(ID_5)>0) dxl.setGoalPosition(ID_6, dxl.getPresentPosition(ID_5));
 
   i++;
   if (i==99){
@@ -111,7 +119,7 @@ uint32_t multiply(uint32_t multiplicand, float multiplier){
 
 void get_angle(){ 
   theta2 = dxl.getPresentPosition(ID_1, UNIT_DEGREE);
-  theta5 = dxl.getPresentPosition(ID_0, UNIT_DEGREE);\
+  theta5 = dxl.getPresentPosition(ID_4, UNIT_DEGREE);
   A = b/a *(sin(theta2) + sin(theta5));
   B = b/a *(cos(theta2) + cos(theta5));
   theta3 = atan(A/B) - theta2 * M_PI/180.0;
