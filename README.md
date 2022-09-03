@@ -9,7 +9,7 @@ Reference : Atsushi Kakogawa(2016), Design of a Multilink-articulated Wheeled In
 <img src="https://user-images.githubusercontent.com/86711384/185090482-feae1dd0-aaf1-4dd9-bba4-3ca795b865d5.png" width="400" height="250"/>
 
 ## Controller Codes
-###motor_haptic_1   
+### motor_haptic_1   
 
 <img src="https://user-images.githubusercontent.com/86711384/185094723-173a92b6-c9d8-4331-bbb4-4b33bd3f4b2e.png" width="400" height="250"/>
    
