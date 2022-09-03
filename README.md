@@ -42,7 +42,7 @@ sudo chmod a+rw /dev/ttyACM0
 ```
 
 ## How to Debug
-Don't know the actual reason, but I couldn't debug the values on the serial monitor while activating the controller.   
+Don't know the actual reason, but I couldn't debug the values on the serial monitor while activating the controller at the same time.   
 Therefore you need to debug using another arduino (I used Arduino Mega).   
    
 1. Connect 7,8 pin of the UNO to TX, RX pin of MEGA
