@@ -8,7 +8,8 @@ Reference : Atsushi Kakogawa(2016), Design of a Multilink-articulated Wheeled In
 
 <img src="https://user-images.githubusercontent.com/86711384/185090482-feae1dd0-aaf1-4dd9-bba4-3ca795b865d5.png" width="400" height="250"/>
 
-## Controller : motor_haptic_1
+## Controller Codes
+###motor_haptic_1
 <img src="https://user-images.githubusercontent.com/86711384/185094723-173a92b6-c9d8-4331-bbb4-4b33bd3f4b2e.png" width="400" height="250"/>
    
 With Arduino Uno & Dynamixel XH430V350R (https://www.robotis.com/shop/item.php?it_id=902-0129-000)
@@ -19,7 +20,7 @@ We added haptic function which helps the controller to share senses with the rob
 There were some limits imitating haptic function with arduino. 
 But we implemented haptic functionality by only sharing controller's sense to the robot. 
    
-## link_robcon
+### link_robcon
 With using motor_haptic_1 code, we linked controller and robot.   
 We got the medium angle of the controller by forward kinematics.   
 We substituted the angles of controller to the motor in the robot, and achieved same movement with each other.   
@@ -29,10 +30,10 @@ a,b : Each length of controller links
 theta2, theta5 : Upper & Lower motor's position of the controller   
 theta3 : Angle between two links of controller's upper part   
 
-## Debug Angle
+### Debug Angle
 It is used for debugging if the arduino calculates precise values of an angle.
 
-## Other files
+### Other files
 They are for checking & updating dynamixel's id and baudrate.   
 "debug" is for debugging the current velocity, position, etc of the dynamixel.   
 
