@@ -34,6 +34,6 @@ They are for checking & updating dynamixel's id and baudrate.
 "debug" is for debugging the current velocity, position, etc of the dynamixel.   
 
 ## USB Connect
-'''
+```
 sudo chmod a+rw /dev/ttyACM0
-'''
+```
