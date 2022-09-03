@@ -29,6 +29,9 @@ a,b : Each length of controller links
 theta2, theta5 : Upper & Lower motor's position of the controller   
 theta3 : Angle between two links of controller's upper part   
 
+## Debug Angle
+It is used for debugging if the arduino calculates precise values of an angle.
+
 ## Other files
 They are for checking & updating dynamixel's id and baudrate.   
 "debug" is for debugging the current velocity, position, etc of the dynamixel.   
@@ -37,3 +40,20 @@ They are for checking & updating dynamixel's id and baudrate.
 ```
 sudo chmod a+rw /dev/ttyACM0
 ```
+
+## How to Debug
+Don't know the actual reason, but I couldn't debug the values on the serial monitor while activating the controller.   
+Therefore you need to debug using another arduino (I used Arduino Mega).   
+   
+1. Connect 7,8 pin of the UNO to TX, RX pin of MEGA
+2. Connect GND pin with each other
+3. Connect serial port each to the computer
+4. Type these on the terminal to access USB connect
+```
+sudo chmod a+rw /dev/ttyACM0
+sudo chmod a+rw /dev/ttyACM1
+```
+5. Set "board" in the tool to "UNO" and "port" to "ACM0(the port you connected to UNO)"
+6. Upload the code you want to use (e.g link robcon or debug angle)
+7. Now change the "board" and "port" to the other one
+8. Activate your Arduino and open the serial monitor (Don't forget to adjust baudrate)
