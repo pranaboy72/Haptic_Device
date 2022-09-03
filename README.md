@@ -2,7 +2,7 @@
 
 ## Drain Pipe Cleaning Robot
 
-We made a robot that can clean inside drain pipe by moving through it
+Made a robot that can clean inside drain pipe by moving through it
 
 Reference : Atsushi Kakogawa(2016), Design of a Multilink-articulated Wheeled Inspection Robot for Winding Pipelines:AIRO-Ⅱ, IEEE
 
@@ -14,17 +14,17 @@ Reference : Atsushi Kakogawa(2016), Design of a Multilink-articulated Wheeled In
 <img src="https://user-images.githubusercontent.com/86711384/185094723-173a92b6-c9d8-4331-bbb4-4b33bd3f4b2e.png" width="400" height="250"/>
    
 With Arduino Uno & Dynamixel XH430V350R (https://www.robotis.com/shop/item.php?it_id=902-0129-000)
-we made a controller that can control front two links intuitively & minutely.   
+I made a controller that can control front two links intuitively & minutely.   
    
-We added haptic function which helps the controller to share senses with the robot.   
+It has haptic function which helps the controller to share senses with the robot.   
    
 There were some limits imitating haptic function with arduino. 
-But we implemented haptic functionality by only sharing controller's sense to the robot. 
+But I implemented haptic functionality by only sharing controller's sense to the robot. 
    
 ### link_robcon
-With using motor_haptic_1 code, we linked controller and robot.   
-We got the medium angle of the controller by forward kinematics.   
-We substituted the angles of controller to the motor in the robot, and achieved same movement with each other.   
+Linked controller and robot.   
+Calculated the medium angle of the controller by forward kinematics.   
+Substituted the angles of controller to the motor in the robot, and achieved same movement with each other.   
    
 In the code,   
 a,b : Each length of controller links   
