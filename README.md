@@ -43,7 +43,7 @@ They are for checking & updating dynamixel's id and baudrate.
 sudo chmod a+rw /dev/ttyACM0
 ```
 
-## How to Debug
+## Debug
 Don't know the actual reason, but I couldn't debug the values on the serial monitor while activating the controller at the same time.   
 Therefore you need additional arduino (I used Arduino Mega).      
    
